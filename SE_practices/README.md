@@ -110,18 +110,22 @@ If you think that the function is complicated enough to warrant a longer descrip
 e.g.
 
 `
+
 def population_density(population, land_area):
+
     """Calculate the population density of an area.
 
     Args:
     population: int. The population of the area
-    land_area: int or float. This function is unit-agnostic, if you pass in values in terms of square km or square miles the function will return a density in those units.
+    land_area: int or float. This function is unit-agnostic, if you pass in values in terms 
+    of square km or square miles the function will return a density in those units.
 
     Returns:
     population_density: population/land_area. The population density of a 
     particular area.
     """
     return population / land_area
+
 `
 
 The next element of a docstring is an explanation of the function's arguments. Here you list the arguments, state their purpose, and state what types the arguments should be. Finally it is common to provide some description of the output of the function. Every piece of the docstring is optional; however, doc strings are a part of good coding practice.
@@ -132,3 +136,55 @@ The next element of a docstring is an explanation of the function's arguments. H
 Project documentation is essential for getting others to understand why and how your code is relevant to them, whether they are potentials users of your project or developers who may contribute to your code. A great first step in project documentation is your README file. It will often be the first interaction most users will have with your project.
 
 Whether it's an application or a package, your project should absolutely come with a README file. At a minimum, this should explain what it does, list its dependencies, and provide sufficiently detailed instructions on how to use it. You want to make it as simple as possible for others to understand the purpose of your project, and quickly get something working.
+
+
+## Version Control in Data Science
+
+
+### Scenario #1
+
+Let's walk through the git commands that go along with each step in the scenario you just observed in the video above.
+
+**STEP 1**: You have a local version of this repository on your laptop, and to get the latest stable version, you pull from the develop branch.
+Switch to the develop branch
+`git checkout develop`
+
+Pull latest changes in the develop branch
+`git pull`
+
+**STEP 2**: When you start working on this demographic feature, you create a new branch for this called demographic, and start working on your code in this branch.
+Create and switch to new branch called demographic from develop branch
+`git checkout -b demographic`
+
+Work on this new feature and commit as you go
+`git commit -m 'added gender recommendations'`
+`git commit -m 'added location specific recommendations'`
+`...`
+
+**STEP 3**: However, in the middle of your work, you need to work on another feature. So you commit your changes on this demographic branch, and switch back to the develop branch.
+Commit changes before switching
+`git commit -m 'refactored demographic gender and location recommendations '`
+
+Switch to the develop branch
+`git checkout develop`
+
+**STEP 4**: From this stable develop branch, you create another branch for a new feature called friend_groups.
+Create and switch to new branch called friend_groups from develop branch
+`git checkout -b friend_groups`
+
+**STEP 5**: After you finish your work on the friend_groups branch, you commit your changes, switch back to the development branch, merge it back to the develop branch, and push this to the remote repository’s develop branch.
+Commit changes before switching
+`git commit -m 'finalized friend_groups recommendations '`
+
+Switch to the develop branch
+`git checkout develop`
+
+Merge friend_groups branch to develop
+`git merge --no-ff friends_groups`
+
+Push to remote repository
+`git push origin develop`
+
+**STEP 6**: Now, you can switch back to the demographic branch to continue your progress on that feature.
+Switch to the demographic branch
+`git checkout demographic`
