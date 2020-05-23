@@ -76,3 +76,59 @@ Helps to reduce runtime, and takes up less memory space.
 2. Know your data structures and which methods are faster e.g. *sets are faster than lists*
 
 See how we implement this in the *optimizing code* jupyter notebooks.
+
+
+
+## Documentation
+
+**DOCUMENTATION**: additional text or illustrated information that comes with or is embedded in the code of software.
+
+Helpful for clarifying complex parts of code, making your code easier to navigate, and quickly conveying how and why different components of your program are used.
+
+Several types of documentation can be added at different levels of your program:
+1. In-line Comments - line level
+2. Docstrings - module and function level
+3. Project Documentation - project level
+
+### In-line Comments
+
+In-line comments are text following hash symbols throughout your code. They are used to explain parts of your code, and really help future contributors understand your work.
+
+One way comments are used is to document the major steps of complex code to help readers follow. Then, you may not have to understand the code to follow what it does. However, others would argue that this is using comments to justify bad code, and that if code requires comments to follow, it is a sign refactoring is needed.
+
+Comments are valuable for explaining where code cannot. For example, the history behind why a certain method was implemented a specific way. Sometimes an unconventional or seemingly arbitrary approach may be applied because of some obscure external variable causing side effects. These things are difficult to explain with code.
+
+### Docstrings
+
+Docstring, or documentation strings, are valuable pieces of documentation that explain the functionality of any function or module in your code. Ideally, each of your functions should always have a docstring.
+
+Docstrings are surrounded by triple quotes. The first line of the docstring is a brief explanation of the function's purpose.
+
+If you think that the function is complicated enough to warrant a longer description, you can add a more thorough paragraph after the one line summary.
+
+
+e.g.
+
+`
+def population_density(population, land_area):
+    """Calculate the population density of an area.
+
+    Args:
+    population: int. The population of the area
+    land_area: int or float. This function is unit-agnostic, if you pass in values in terms of square km or square miles the function will return a density in those units.
+
+    Returns:
+    population_density: population/land_area. The population density of a 
+    particular area.
+    """
+    return population / land_area
+`
+
+The next element of a docstring is an explanation of the function's arguments. Here you list the arguments, state their purpose, and state what types the arguments should be. Finally it is common to provide some description of the output of the function. Every piece of the docstring is optional; however, doc strings are a part of good coding practice.
+
+
+### Project Documentation
+
+Project documentation is essential for getting others to understand why and how your code is relevant to them, whether they are potentials users of your project or developers who may contribute to your code. A great first step in project documentation is your README file. It will often be the first interaction most users will have with your project.
+
+Whether it's an application or a package, your project should absolutely come with a README file. At a minimum, this should explain what it does, list its dependencies, and provide sufficiently detailed instructions on how to use it. You want to make it as simple as possible for others to understand the purpose of your project, and quickly get something working.
