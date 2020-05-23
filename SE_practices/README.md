@@ -70,3 +70,9 @@ Try to use no more than three arguments when possible. This is not a hard rule a
 
 ***See example dirty.py versus clean.py, and modular.py versus crafty.py***
 
+### Efficient Code
+Helps to reduce runtime, and takes up less memory space.
+1. Use vector operations over loops e.g. *finding common items using ***numpy intersect*** and ***numpy arrays*** *
+2. Know your data structures and which methods are faster e.g. *sets are faster than lists*
+
+See how we implement this in the *optimizing code* jupyter notebooks.
