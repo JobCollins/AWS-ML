@@ -162,7 +162,9 @@ Work on this new feature and commit as you go
 
 `
     git commit -m 'added gender recommendations'
+
     git commit -m 'added location specific recommendations'
+    
     ...
 `
 
