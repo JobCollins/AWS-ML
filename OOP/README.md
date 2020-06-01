@@ -11,7 +11,7 @@ When you train a machine learning algorithm with Scikit-learn, you don't have to
 
 An object has two essential parts; *characteristics*, *actions*. Consider the followoing image of two object -  a salesperson and a shirt.
 
-![](AWS-ML/OOP/OOP.png)
+![](OOP.png)
 
 ### Characteristics and Actions in English Grammar
 
